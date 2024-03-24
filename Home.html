@@ -1,0 +1,531 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Explore Delft</title>
+<meta name="generator" content="WYSIWYG Web Builder 17 - http://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/owl.carousel.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/jenweb.css" rel="stylesheet">
+<link href="css/Home.css" rel="stylesheet">
+<script src="jquery-1.12.4.min.js"></script>
+<script src="owl.carousel.min.js"></script>
+<script src="popper.min.js"></script>
+<script src="util.min.js"></script>
+<script src="collapse.min.js"></script>
+<script src="dropdown.min.js"></script>
+<script src="skrollr.min.js"></script>
+<script src="carousel.min.js"></script>
+<script src="jquery-ui.min.js"></script>
+<script src="wb.photocollage.min.js"></script>
+<script src="wwb17.min.js"></script>
+<script>   
+   $(document).ready(function()
+   {
+      $('#reviewsImage1').addClass('visibility-hidden');
+      $('#portfolio-image2').addClass('visibility-hidden');
+      $("a[href*='#planTripLayoutGrid']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#planTripLayoutGrid').offset().top }, 600, 'easeInSine');
+      });
+      $("a[href*='#galleryLayoutGrid']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_galleryLayoutGrid').offset().top-88 }, 600, 'easeOutCirc');
+      });
+      function onScrollgalleryLayoutGrid()
+      {
+         var $obj = $("#wb_galleryLayoutGrid");
+         if (!$obj.hasClass("in-viewport") && $obj.inViewPort(false))
+         {
+            $obj.addClass("in-viewport");
+            AnimateCss('reviewsImage1', 'animate-fade-in-up', 0, 1000);
+            AnimateCss('portfolio-image2', 'animate-fade-in-up', 500, 1000);
+         }
+      }
+      onScrollgalleryLayoutGrid();
+      $(window).scroll(function(event)
+      {
+         onScrollgalleryLayoutGrid();
+      });
+      $("#reviewsContainer").owlCarousel({autoplayTimeout:5000, margin: 16, autoplay: true, nav: false, loop: true, dots: true, items: 2, slideBy: 1});
+      $("a[href*='#contactForm']").click(function(event)
+      {
+         event.preventDefault();
+         $('html, body').stop().animate({ scrollTop: $('#wb_contactForm').offset().top }, 600, 'easeInSine');
+      });
+      $('#navigationMenu .dropdown-toggle').dropdown({popperConfig:{placement:'bottom-start',modifiers:{computeStyle:{gpuAcceleration:false}}}});
+      $(document).on('click','.navigationMenu-navbar-collapse.show',function(e)
+      {
+         if ($(e.target).is('a') && ($(e.target).attr('class') != 'dropdown-toggle')) 
+         {
+            $(this).collapse('hide');
+         }
+      });
+      function skrollrInit()
+      {
+         skrollr.init({forceHeight: false, mobileCheck: function() { return false; }, smoothScrolling: false});
+      }
+      skrollrInit();
+      $("#Carousel1").on('slid.bs.carousel', function(e)
+      {
+         var index = $(e.relatedTarget).index();
+         switch(index)
+         {
+            case 0:
+               AnimateCss('wb_welcomeText1', 'slide-left-in', 300, 1000);
+               AnimateCss('wb_welcomeText2', 'slide-right-in', 1000, 1000);
+               AnimateCss('welcomeButton1', 'swash-in', 2000, 1000);
+               break;
+            case 1:
+               AnimateCss('wb_welcomeText3', 'scale-in-horizontal-center', 300, 1000);
+               AnimateCss('wb_welcomeText4', 'scale-in-vertical-center', 1000, 1000);
+               AnimateCss('welcomeButton2', 'twister-down-in', 2000, 1000);
+               break;
+            case 2:
+               AnimateCss('wb_welcomeText5', 'transform-rotate-in', 300, 1000);
+               AnimateCss('welcomeButton3', 'vanish-in', 2000, 1000);
+               break;
+            case 5:
+               AnimateCss('wb_welcomeText6', 'transform-roll-in', 1000, 1000);
+               break;
+         }
+      });
+      $("#Carousel1").bootstrapcarousel({interval:6000, pause: false});
+      $("#attractionsCarousel").on('slid.bs.carousel', function(e)
+      {
+         var index = $(e.relatedTarget).index();
+         switch(index)
+         {
+            case 0:
+               $('#Carousel2').bootstrapcarousel(0);
+               break;
+            case 1:
+               $('#Carousel2').bootstrapcarousel(1);
+               break;
+         }
+      });
+      $("#attractionsCarousel").bootstrapcarousel({interval:0, pause: false});
+      $("#galleryCollage").photocollage({ effect: 'css', duration: 600, padding: 20, lazyload: true, matrix: '1,1,1,2,0,1,2,0,0,0,1,0,0,1,1,2,0,1,2,0,0,0,1,0,0' });
+   });
+</script>
+</head>
+<body>
+   <div id="wb_navigation">
+      <div id="navigation">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_navigationImage" style="display:inline-block;width:190px;height:142px;z-index:0;">
+                  <img src="images/STRAY.png" id="navigationImage" alt="" width="190" height="142">
+               </div>
+            </div>
+            <div class="col-2">
+               <div id="wb_navigationMenu" style="display:inline-block;width:100%;z-index:1;">
+                  <div id="navigationMenu" class="navigationMenu" style="width:100%;height:auto !important;">
+                     <div class="container">
+                        <div class="navbar-header">
+                           <button title="Hamburger Menu" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navigationMenu-navbar-collapse">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                           </button>
+                        </div>
+                        <div class="navigationMenu-navbar-collapse collapse">
+                           <ul class="nav navbar-nav">
+                              <li class="nav-item">
+                                 <a href="./Home.html" class="nav-link">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="./Gallery.html" class="nav-link">Gallery</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="./Portfolio.html" class="nav-link">Portfolio</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a href="#footer" class="nav-link">About</a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_welcome">
+      <div id="welcome">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_Carousel1">
+                  <div id="Carousel1" class="carousel slide" data-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-target="#Carousel1" data-slide-to="0" class="active"></li>
+                        <li data-target="#Carousel1" data-slide-to="1"></li>
+                        <li data-target="#Carousel1" data-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="carousel-innerframe">
+                              <div id="wb_welcomeText1">
+                                 <p style="font-family:Arial;font-size:13px;line-height:16px;"><span style="font-family:Georgia;font-size:117px;line-height:125.5px;font-weight:bold;">WELCOME</span></p>
+                              </div>
+                              <div id="wb_welcomeText2">
+                                 <p style="font-size:19px;line-height:21px;"><span style="font-size:35px;line-height:38px;">Do not pity a shelter dog. Adopt one.</span></p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="carousel-innerframe">
+                              <div id="wb_welcomeText3">
+                                 <p style="font-family:Arial;font-size:13px;line-height:16px;"><span style="font-family:Georgia;font-size:117px;line-height:125.5px;font-weight:bold;">WELCOME</span></p>
+                                 <p style="font-family:Arial;font-size:24px;line-height:27.5px;">&nbsp;</p>
+                              </div>
+                              <div id="wb_welcomeText4">
+                                 <p style="font-size:19px;line-height:21px;"><span style="font-size:35px;line-height:38px;">Do not pity a shelter dog. Adopt one.</span></p>
+                                 <p style="font-size:19px;line-height:21px;">&nbsp;</p>
+                              </div>
+                              <div id="wb_welcomeText1">
+                                 <p style="font-family:Arial;font-size:13px;line-height:16px;"><span style="font-family:Georgia;font-size:117px;line-height:125.5px;font-weight:bold;">WELCOME</span></p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="carousel-innerframe">
+                              <div id="wb_welcomeText5">
+                                 <p style="font-family:Arial;font-size:21px;line-height:24.5px;"><span style="font-family:Georgia;font-size:117px;line-height:125.5px;font-weight:bold;">WELCOME</span></p>
+                              </div>
+                              <div id="wb_welcomeText6">
+                                 <p style="font-size:19px;line-height:21px;"><span style="font-size:35px;line-height:38px;">Do not pity a shelter dog. Adopt one.</span></p>
+                                 <p style="font-size:19px;line-height:21px;">&nbsp;</p>
+                              </div>
+                              <div id="wb_welcomeText3">
+                                 <p style="font-family:Arial;font-size:13px;line-height:16px;"><span style="font-family:Georgia;font-size:117px;line-height:125.5px;font-weight:bold;">WELCOME</span></p>
+                                 <p style="font-family:Arial;font-size:24px;line-height:27.5px;">&nbsp;</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <a class="carousel-item-left carousel-control" href="#Carousel1" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span>
+                     </a>
+                     <a class="carousel-item-right carousel-control" href="#Carousel1" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_planTrip">
+      <div id="planTrip">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_planTripHeading" style="display:inline-block;width:100%;z-index:11;">
+                  <h2 id="planTripHeading">YOUR HELP IS HIGHLY NEEDED.</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_planTripLayoutGrid">
+      <div id="planTripLayoutGrid">
+         <div id="wb_planTripCard1" style="display:flex;text-align:center;z-index:12;" class="card">
+            <div id="planTripCard1-card-body">
+               <div id="planTripCard1-card-item0"><i class="fa fa-envelope-open"></i></div>
+               <div id="planTripCard1-card-item1">Donate with Love</div>
+               <div id="planTripCard1-card-item2">Help stray dogs by donating to our website. Your donation will make a real difference for needy stray dogs.</div>
+            </div>
+         </div>
+         <div id="wb_planTripCard2" style="display:flex;text-align:center;z-index:13;" class="card">
+            <div id="planTripCard2-card-body">
+               <div id="planTripCard2-card-item0"><i class="fa fa-handshake-o"></i></div>
+               <div id="planTripCard2-card-item1">Help is hope. Help is humanity</div>
+               <div id="planTripCard2-card-item2">Help is hope for those in need—bringing light to the darkest moments. It is the essence of humanity, uniting us all in kindness and compassion.</div>
+            </div>
+         </div>
+         <div id="wb_planTripCard3" style="display:flex;text-align:center;z-index:14;" class="card">
+            <div id="planTripCard3-card-body">
+               <div id="planTripCard3-card-item0"><i class="fa fa-smile-o"></i></div>
+               <div id="planTripCard3-card-item1">Support Stray Dogs</div>
+               <div id="planTripCard3-card-item2">By supporting our efforts, you can make a meaningful difference in the lives of stray dogs and contribute to creating a more compassionate world for these animals. Join us in providing a better future and being a part of their journey towards a brighter tomorrow.</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_banner">
+      <div id="banner-overlay"></div>
+      <div id="banner">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_bannerHeading1" style="display:inline-block;width:100%;z-index:15;">
+                  <h2 id="bannerHeading1">STRAY DOGS WEBSITE</h2>
+               </div>
+               <div id="wb_bannerHeading2" style="display:inline-block;width:100%;z-index:16;">
+                  <h3 id="bannerHeading2">Everything to make you knowledgeable enough.</h3>
+               </div>
+            </div>
+            <div class="col-2">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_attractions">
+      <div id="attractions">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_attractionsCarousel">
+                     <div id="attractionsCarousel" class="carousel slide">
+                        <ol class="carousel-indicators">
+                           <li data-target="#attractionsCarousel" data-slide-to="0" class="active"></li>
+                           <li data-target="#attractionsCarousel" data-slide-to="1"></li>
+                        </ol>
+                        <div class="carousel-inner">
+                           <div class="carousel-item frame-1 active">
+                              <div class="carousel-innerframe">
+                                 <div id="wb_attractionsText2" class="caption">
+                                    <p style="font-size:16px;line-height:18px;"><span style="font-size:21px;line-height:24.5px;font-weight:bold;">Johannes Vermeer</span><br/><span style="font-size:15px;line-height:16.5px;">Girl with pearl earring</span></p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="carousel-item frame-2">
+                              <div class="carousel-innerframe">
+                                 <div id="wb_attractionsText3" class="caption">
+                                    <p style="font-size:16px;line-height:18px;font-weight:bold;"><span style="font-size:21px;line-height:24.5px;">Adriaen Thomasz Key</span></p>
+                                    <p style="font-size:16px;line-height:18px;"><span style="font-size:15px;line-height:16.5px;">Willem van Oranje</span></p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <a class="carousel-item-left carousel-control" href="#attractionsCarousel" role="button" data-slide="prev">
+                           <span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-item-right carousel-control" href="#attractionsCarousel" role="button" data-slide="next">
+                           <span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-2">
+               <div class="col-2-padding">
+                  <div id="wb_attractionsText1">
+                     <h5>Welcome to our stray dogs website, dedicated to advocating for and supporting stray and abandoned dogs. Our site serves as a vital platform to raise awareness about the plight of stray dogs and to facilitate their rescue, rehabilitation, and adoption. Through our resources, adoption listings, and community outreach initiatives, we aim to connect these dogs with loving homes and provide assistance to those willing to help. Join us in making a difference in the lives of these wonderful animals by exploring our website, learning about our advocacy efforts, and discovering how you can get involved and support our cause.</h5><br/>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_gallery">
+      <div id="gallery">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_galleryHeading" style="display:inline-block;width:100%;z-index:21;">
+                  <h2 id="galleryHeading">Gallery</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_galleryLayoutGrid">
+      <div id="galleryLayoutGrid">
+         <div class="row">
+            <div class="col-1">
+               <div class="col-1-padding">
+                  <div id="wb_galleryCollage" style="display:inline-block;width:100%;z-index:22;">
+                     <div id="galleryCollage">
+                        <div class="thumbnails">
+                           <figure class="thumbnail">
+                              <a href="images/Untitled.jpg"><img alt="" src="images/Untitled.jpg" loading="lazy" class="image" width="273" height="183"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/7.jpg"><img alt="" src="images/7.jpg" loading="lazy" class="image" width="273" height="153"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/5.jpg"><img alt="" src="images/5.jpg" loading="lazy" class="image" width="273" height="204"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/4.jpg"><img alt="" src="images/4.jpg" loading="lazy" class="image" width="273" height="182"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/3.jpg"><img alt="" src="images/3.jpg" loading="lazy" class="image" width="273" height="153"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/2.jpg"><img alt="" src="images/2.jpg" loading="lazy" class="image" width="273" height="153"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/website4.jpg"><img alt="" src="images/website4.jpg" loading="lazy" class="image" width="273" height="204"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/1.jpg"><img alt="" src="images/1.jpg" loading="lazy" class="image" width="273" height="153"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/7.jpg"><img alt="" src="images/7.jpg" loading="lazy" class="image" width="273" height="153"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/website3.jpg"><img alt="" src="images/website3.jpg" loading="lazy" class="image" width="273" height="182"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/website5.jpg"><img alt="" src="images/website5.jpg" loading="lazy" class="image" width="273" height="153"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/8.jpg"><img alt="" src="images/8.jpg" loading="lazy" class="image" width="273" height="273"></a>
+                           </figure>
+                           <figure class="thumbnail">
+                              <a href="images/website6.jpg"><img alt="" src="images/website6.jpg" loading="lazy" class="image" width="273" height="142"></a>
+                           </figure>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_reviews">
+      <div id="reviews">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_reviewsHeading" style="display:inline-block;width:100%;z-index:23;">
+                  <h2 id="reviewsHeading">What do conservationist say?</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_reviewsContainer">
+      <div id="reviewsContainer" class="owl-carousel owl-theme">
+         <div id="wb_reviewsCard1" style="display:flex;z-index:24;" class="card">
+            <div id="reviewsCard1-card-body">
+               <img id="reviewsCard1-card-item0" src="images/418727056_1472848280319486_6112528158241074339_n.jpg" width="1530" height="2040" alt="" title="">
+               <div id="reviewsCard1-card-item1">Via Anne E. Alcarmen</div>
+               <div id="reviewsCard1-card-item2">Sponsor</div>
+               <div id="reviewsCard1-card-item3"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard1-card-item4"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard1-card-item5"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard1-card-item6"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard1-card-item7"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard1-card-item8">Stray dogs or even domestic dogs should be treated as human because they have feelings, they're lovable and they care too. Stray dogs protects you and gives you peace and makes us happy.</div>
+            </div>
+         </div>
+         <div id="wb_reviewsCard2" style="display:flex;z-index:25;" class="card">
+            <div id="reviewsCard2-card-body">
+               <img id="reviewsCard2-card-item0" src="images/426586738_972441087560260_3870751696128733698_n.jpg" width="1080" height="1080" alt="" title="">
+               <div id="reviewsCard2-card-item1">Francis  A. Fernandez</div>
+               <div id="reviewsCard2-card-item2">Prince of Orange</div>
+               <div id="reviewsCard2-card-item3"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard2-card-item4"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard2-card-item5"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard2-card-item6"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard2-card-item7"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard2-card-item8">Saving stray dogs can prevent spreading diseases. Through proving shelter and food can reduce their suffering. We cannot understand dogs verbally but we can feel their emotions. As a sign of cultural respect towards living  beings we should save and treat dogs in a good way.</div>
+            </div>
+         </div>
+         <div id="wb_Card1" style="display:flex;z-index:26;" class="card">
+            <div id="Card1-card-body">
+               <img id="Card1-card-item0" src="images/Meisje_met_de_parel.jpg" width="400" height="400" alt="" title="">
+               <div id="Card1-card-item1">Johannes Vermeer</div>
+               <div id="Card1-card-item2">Painter</div>
+               <div id="Card1-card-item3"><i class="fa fa-star"></i></div>
+               <div id="Card1-card-item4"><i class="fa fa-star"></i></div>
+               <div id="Card1-card-item5"><i class="fa fa-star"></i></div>
+               <div id="Card1-card-item6"><i class="fa fa-star"></i></div>
+               <div id="Card1-card-item7"><i class="fa fa-star"></i></div>
+               <div id="Card1-card-item8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vivamus magna justo, lacinia eget consectetur sed, convallis."</div>
+            </div>
+         </div>
+         <div id="wb_reviewsCard4" style="display:flex;z-index:27;" class="card">
+            <div id="reviewsCard4-card-body">
+               <img id="reviewsCard4-card-item0" src="images/Willem-de-Zwijger.jpg" width="480" height="480" alt="" title="">
+               <div id="reviewsCard4-card-item1">Willem de Zwijger</div>
+               <div id="reviewsCard4-card-item2">Prince of Orange</div>
+               <div id="reviewsCard4-card-item3"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item4"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item5"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item6"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item7"><i class="fa fa-star"></i></div>
+               <div id="reviewsCard4-card-item8">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Vivamus magna justo, lacinia eget consectetur sed, convallis."</div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_contact">
+      <div id="contact">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_contactHeading" style="display:inline-block;width:100%;z-index:28;">
+                  <h2 id="contactHeading">Looking for more inspiration?</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="wb_contactForm">
+      <div id="contactForm-divider-top">
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 20" preserveAspectRatio="none">
+            <path class="divider-fill" d="M500,20 L490,0 h20 L500,20 Z"/>
+         </svg></div>
+      <div id="contactForm">
+         <div class="row">
+            <div class="col-1">
+               <div id="wb_contactText1">
+                  <p style="font-size:13px;line-height:16px;"><span style="font-size:27px;line-height:30px;font-weight:bold;">Say Yes in </span><span style="font-size:27px;line-height:30px;font-weight:bold;">S</span><span style="font-size:27px;line-height:30px;font-weight:bold;">aving</span><span style="font-size:27px;line-height:30px;font-weight:bold;"> Dogs</span><span style="font-size:27px;line-height:30px;font-weight:bold;">!</span></p>
+               </div>
+               <div id="wb_contactText2">
+                  <p style="font-size:15px;line-height:16.5px;">We only use your e-mail address to stay in touch with your cooperation. You can always unsubscribe using the link in the e-mail. </p>
+               </div>
+               <input type="text" id="contactEmail" style="display:block;width:100%;height:35px;z-index:31;" name="email" value="" spellcheck="false" placeholder="Your e-mail">
+               <input type="submit" id="contactButton" name="" value="Subscribe" style="display:inline-block;width:87px;height:30px;z-index:32;">
+            </div>
+            <div class="col-2">
+               <div id="wb_contactText3">
+                  <p style="font-size:27px;line-height:30px;"><span style="font-weight:bold;">Contact Us</span></p>
+                  <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                  <p style="font-size:13px;line-height:16px;">Stray Dogs Information</p>
+                  <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                  <p style="font-size:13px;line-height:16px;">Mindanao Philippines </p>
+                  <p style="font-size:13px;line-height:16px;">2611 Region IX</p>
+                  <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                  <p style="font-size:13px;line-height:16px;">09091517045 </p>
+                  <p style="font-size:13px;line-height:16px;">&nbsp;</p>
+                  <p style="font-size:13px;line-height:16px;">straydogs.com</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="StickyLayer" style="position:fixed;text-align:left;left:auto;right:25px;top:auto;bottom:25px;width:50px;height:50px;z-index:61;" data-250-start="opacity:1;" data-start="opacity:0;">
+      <div id="wb_up-arrow" style="position:absolute;left:9px;top:8px;width:24px;height:24px;text-align:center;z-index:34;">
+         <a href="#welcome"><div id="up-arrow"><i class="fa fa-angle-up"></i></div></a></div>
+   </div>
+   <div id="wb_footer" style="z-index:10000 !important;">
+      <div id="footer">
+         <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-2">
+               <div id="wb_footerText">
+                  <p style="font-size:12px;line-height:13.5px;"><span style="background-color:#FFFFFF;">C</span><span style="background-color:#FFFFFF;">opyright </span><span style="background-color:#FFFFFF;">©</span><span style="background-color:#FFFFFF;"> 20</span><span style="background-color:#FFFFFF;">23 Carribean LSC</span></p>
+               </div>
+            </div>
+            <div class="col-3">
+               <div id="wb_footerIcon1" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:46;">
+                  <a href="https://www.facebook.com/VisitDelft" target="_blank"><div id="footerIcon1"><i class="fa fa-facebook-square"></i></div></a>
+               </div>
+               <div id="wb_footerIcon2" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:47;">
+                  <a href="https://www.instagram.com/visitdelft" target="_blank"><div id="footerIcon2"><i class="fa fa-instagram"></i></div></a>
+               </div>
+               <div id="wb_footerIcon3" style="display:inline-block;width:24px;height:40px;text-align:center;z-index:48;">
+                  <a href="https://www.snapchat.com/add/visitdelft" target="_blank"><div id="footerIcon3"><i class="fa fa-snapchat-ghost"></i></div></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
